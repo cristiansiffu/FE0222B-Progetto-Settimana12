@@ -1,0 +1,33 @@
+<form [formGroup]="form" (ngSubmit)="signin(f)" #f="ngForm">
+
+  <div formGroupName="userInfo">
+
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <input type="text" formControlName="email" id="email" class="form-control">
+      <span class="text-danger" *ngIf="checkEmail('userInfo.email')?.invalid && checkEmail('userInfo.email')?.touched">
+        <ng-container *ngIf="getEmailErrors('userInfo.email', 'required')">E-mail required.
+        </ng-container>
+        <ng-container *ngIf="getEmailErrors('userInfo.email', 'email')">Wrong e-mail format.</ng-container>
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" formControlName="password" id="password" class="form-control">
+      <span class="text-danger"
+        *ngIf="checkPassword('userInfo.password')?.invalid && checkPassword('userInfo.password')?.touched">
+        <ng-container *ngIf="getPasswordErrors('userInfo.password', 'required')">Password required.
+        </ng-container>
+        <ng-container *ngIf="getPasswordErrors('userInfo.password', 'pattern')">Must contain only
+          letters and
+          numbers.</ng-container>
+        <!-- <ng-container *ngIf="getPasswordErrors('userInfo.password', 'minlength')">Must contain 8
+          characters.</ng-container> -->
+      </span>
+    </div>
+
+    <button type="submit" [disabled]="!form.valid" class="btn text-light w-100 my-3">Log-In</button>
+  </div>
+</form>
+<router-outlet></router-outlet>
