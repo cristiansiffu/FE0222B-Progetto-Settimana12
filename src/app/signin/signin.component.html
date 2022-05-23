@@ -2,6 +2,8 @@
 
   <div formGroupName="userInfo">
 
+    <ng-container *ngIf=""></ng-container>
+
     <div class="form-group">
       <label for="email">E-mail</label>
       <input type="text" formControlName="email" id="email" class="form-control">
@@ -22,8 +24,8 @@
         <ng-container *ngIf="getPasswordErrors('userInfo.password', 'pattern')">Must contain only
           letters and
           numbers.</ng-container>
-        <!-- <ng-container *ngIf="getPasswordErrors('userInfo.password', 'minlength')">Must contain 8
-          characters.</ng-container> -->
+          <ng-container *ngIf="getPasswordErrors('userInfo.password', 'minlength')">Must contain 6 characters.
+          </ng-container>
       </span>
     </div>
 

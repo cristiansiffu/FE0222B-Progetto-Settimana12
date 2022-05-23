@@ -1,24 +1,18 @@
 {
   "users": [
     {
-      "email": "n@p.com",
-      "password": "$2a$10$SmgrR2x18eeoJMFtk9N9FORmSTDG0ToOtqOS0Ik0jgiRWoAqe7sT2",
-      "name": "nicola toledo",
+      "email": "cristian@siffu.com",
+      "password": "$2a$10$.iCZ7Sr5HJ1s0lPTKrq0x.HB0b7MlGkWu7g9OOEOgrtYn7yPDvWW2",
+      "name": "Cristian",
+      "surname": "Siffu",
       "id": 1
     },
     {
-      "email": "cristian@siffu.com",
-      "password": "$2a$10$cwFXUWp5koYxMpan6hUbr.bA386OtzcBtqRcL90TE06rzYwtRBWES",
-      "name": "Cristian",
-      "surname": "Siffu",
-      "id": 2
-    },
-    {
       "email": "riccardo@siffu.com",
-      "password": "$2a$10$v8wIox1r.JPQEbqYB2rL3ugYxJMM2DnLlJu1LSrH/2ak51zIk0miW",
+      "password": "$2a$10$8VFmV/dDszA3E.bH3v9HxOoD4k3qFEbLEMfKYfIbmcx/sqmLHRoj.",
       "name": "Riccardo",
       "surname": "Siffu",
-      "id": 3
+      "id": 2
     }
   ],
   "favorites": [
@@ -28,9 +22,39 @@
       "id": 1
     },
     {
+      "movieId": 567189,
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "movieId": 578701,
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "movieId": 632357,
+      "userId": 1,
+      "id": 4
+    },
+    {
+      "movieId": 567189,
+      "userId": 2,
+      "id": 5
+    },
+    {
       "movieId": 578701,
       "userId": 2,
-      "id": 2
+      "id": 6
+    },
+    {
+      "movieId": 632357,
+      "userId": 2,
+      "id": 7
+    },
+    {
+      "movieId": 632357,
+      "userId": 2,
+      "id": 8
     }
   ],
   "genres": [

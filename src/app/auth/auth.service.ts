@@ -91,7 +91,7 @@ export class AuthService {
     this.autoLogout(expiration);
   }
 
-  private showErrors(err: any) {
+  public showErrors(err: any) {
     switch (err.error) {
       case 'Email and password are required':
         return throwError(() => new Error('Email and password are required'));

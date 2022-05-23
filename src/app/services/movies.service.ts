@@ -15,7 +15,6 @@ export class MoviesService {
   constructor(private authService: AuthService, private http: HttpClient) {}
 
   getMovies() {
-    // this.getFavourite();
     return this.http.get<Movies[]>(`${this.URL}/movies-popular`);
   }
 
@@ -23,25 +22,17 @@ export class MoviesService {
     movie.favourite = true;
     this.authService.user$.subscribe((val) => {
       console.log(val);
-      let randomId = Math.floor(Math.random() * 100000)
+      let idFavourite = 0
       const favouriteMovie: Favourites = {
         movieId: movie.id,
         userId: val!.user.id,
-        id: randomId,
+        id: idFavourite++,
       };
-      console.log(favouriteMovie);
+      console.log(favouriteMovie.movieId, favouriteMovie.userId);
       return this.http.post<Favourites[]>(
         'http://localhost:4201/favorites',
         favouriteMovie
-      );
+      ).subscribe()
     });
   }
-
-  /* getFavourite() {
-    this.authService.user$.subscribe((val) => {
-      this.http.get<Favourites[]>(
-        `http://localhost:4201/favorites?userId=${val!.user.id}`
-      );
-    });
-  } */
 }

@@ -40,6 +40,7 @@ export class SignupComponent implements OnInit {
         password: this.formBuilder.control(null, [
           Validators.required,
           Validators.pattern('[a-zA-Z0-9 ]*'),
+          Validators.minLength(6)
         ]),
       }),
     });

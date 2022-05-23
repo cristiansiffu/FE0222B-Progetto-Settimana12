@@ -42,6 +42,8 @@
         <ng-container *ngIf="getPasswordErrors('userInfo.password', 'pattern')">Must contain only
           letters and
           numbers.</ng-container>
+          <ng-container *ngIf="getPasswordErrors('userInfo.password', 'minlength')">Must contain 6 characters.
+          </ng-container>
       </span>
     </div>
     <button type="submit" [disabled]="!form.valid" class="btn text-light w-100 my-3">Create account</button>

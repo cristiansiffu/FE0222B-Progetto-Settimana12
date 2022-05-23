@@ -7,6 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { AuthService } from '../auth/auth.service';
+import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-signin',
@@ -28,6 +29,7 @@ export class SigninComponent implements OnInit {
         password: this.formBuilder.control(null, [
           Validators.required,
           Validators.pattern('[a-zA-Z0-9 ]*'),
+          Validators.minLength(6)
         ]),
       }),
     });
@@ -37,8 +39,8 @@ export class SigninComponent implements OnInit {
       await this.authService.signin(form.value.userInfo).toPromise();
       this.router.navigate(['/movies'])
       form.reset();
-    } catch (error: any) {
-      console.error(error);
+    } catch (err: any) {
+      console.error(err);
     }
   }
 
